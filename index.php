@@ -1,29 +1,32 @@
 <?php
 // Personal Profile Data
+$tz = $_GET["tz"] ?? "Asia/Jakarta";
+
+$date = shell_exec('TZ="'.$tz.'" date');
 $profile = [
-    "name" => "Alex Mercer",
-    "title" => "Full Stack Developer & UI Architect",
-    "tagline" => "Building digital experiences with precision and purpose",
-    "avatar_initials" => "AM",
-    "email" => "alex.mercer@email.com",
+    "name" => "Rayhan Rabiul Tsani",
+    "title" => "Security Enthusiast",
+    "tagline" => "One small step at a time",
+    "avatar_initials" => "RT",
+    "email" => "rayhan@madhava.co.id",
     "location" => "San Francisco, CA",
-    "website" => "alexmercer.dev",
-    "github" => "github.com/alexmercer",
-    "linkedin" => "linkedin.com/in/alexmercer",
-    "bio" => "I'm a passionate developer with 7+ years of experience crafting high-performance web applications. I bridge the gap between elegant design and robust engineering — turning complex problems into intuitive digital products.",
+    "website" => "falanteris.github.io",
+    "github" => "github.com/Falanteris",
+    "linkedin" => "linkedin.com/Falanteris",
+    "bio" => "Aspiring Security Enthusiast interested in all avenues of Cyber Security",
     "stats" => [
-        ["value" => "7+", "label" => "Years Exp."],
-        ["value" => "120+", "label" => "Projects"],
+        ["value" => "4+", "label" => "Years Exp."],
+        ["value" => "10+", "label" => "Projects"],
         ["value" => "40+", "label" => "Clients"],
         ["value" => "99%", "label" => "Satisfaction"],
     ],
     "skills" => [
-        ["name" => "PHP / Laravel", "level" => 95],
-        ["name" => "JavaScript / React", "level" => 92],
-        ["name" => "Node.js", "level" => 85],
-        ["name" => "MySQL / PostgreSQL", "level" => 88],
+        ["name" => "Blue Teaming", "level" => 90],
+        ["name" => "Mobile Pentest", "level" => 80],
+        ["name" => "Web Pentest", "level" => 85],
+        ["name" => "Relational Database", "level" => 88],
         ["name" => "Docker / DevOps", "level" => 78],
-        ["name" => "UI/UX Design", "level" => 80],
+        ["name" => "Forensic", "level" => 80],
     ],
     "projects" => [
         [
@@ -57,7 +60,7 @@ $profile = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($profile['name']) ?> — Profile</title>
+    <title>  <?= htmlspecialchars($profile['name']) ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <style>
@@ -477,12 +480,13 @@ $profile = [
 </head>
 <body>
 <div class="container">
-
+    
     <!-- HERO -->
     <header class="hero">
         <div>
             <div class="hero-badge">Available for work</div>
-            <h1><?= htmlspecialchars($profile['name']) ?><span>.</span></h1>
+            <p class="hero-title" style="font-color: white;"><b><?= $date ?></b></p>
+            <h1> My Name is <?= htmlspecialchars($profile['name']) ?><span>.</span></h1>
             <p class="hero-title"><?= htmlspecialchars($profile['title']) ?></p>
             <p class="hero-tagline"><?= htmlspecialchars($profile['tagline']) ?></p>
         </div>
